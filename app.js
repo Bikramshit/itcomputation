@@ -21,14 +21,20 @@ app.use(
 
 app.use(cookieParser());
 
+
+
 // Importing & Using Routes 
 import user from "./routes/userRoutes.js"
 app.use("/api", user);
-app.use(cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+
+const cors_options ={
+    origin:'*',
     credentials:true,
-methods: ["GET", "POST", "DELETE", "PUT"],
-}))
+    methods:["GET", "POST", "DELETE", "PUT"],
+}
+
+app.use(cors(cors_options));
+
 export default app;
 
 

@@ -1,6 +1,0 @@
-{
-    "version":2,
-    "name":"it_computation",
-    "builds":[{"src":"server.js","use":"@vercel/node"}],
-    "routes":[{"src":"server.js","dost":"/server.js"}]
-}
