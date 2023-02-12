@@ -20,14 +20,13 @@ app.use(
 app.use(cookieParser());
 
 
-
-const cors_options ={
-    origin:"http://127.0.0.1:3000",
+app.use(cors({
+    origin:process.env.FRONTEND_URL,
     credentials:true,
-    methods:["GET", "POST", "DELETE", "PUT"],
-}
+    methods:["GET","POST","PUT","DELETE"],
 
-app.use(cors(cors_options));
+}));
+
 
 
 // Importing & Using Routes 
