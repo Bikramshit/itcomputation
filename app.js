@@ -27,6 +27,14 @@ app.use(cookieParser());
 import user from "./routes/userRoutes.js"
 app.use("/api", user);
 
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+    });
+
+
 const cors_options ={
     origin:'*',
     credentials:true,
